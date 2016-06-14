@@ -51,8 +51,6 @@ export default class App extends Component {
                     {/* /.content */}
                 </div>
                 {/* /.content-wrapper */}
-
-                <Footer />
             </div>
         );
     }

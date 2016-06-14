@@ -7,10 +7,10 @@ export default class Sidebar extends Component {
                 <section className="sidebar">
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="/static/img/user2-160x160.jpg" className="img-circle" alt="User Image"/>
+                            <img src="https://www.gravatar.com/avatar/145d7b2ea0dd15d76ed257dc0fb1bfd8?s=96&d=identicon" className="img-circle" alt="Jonjo McKay"/>
                         </div>
                         <div className="pull-left info">
-                            <p>Alexander Pierce</p>
+                            <p>Jonjo McKay</p>
                             <a href="#"><i className="fa fa-circle text-success"/> Online</a>
                         </div>
                     </div>
@@ -24,152 +24,82 @@ export default class Sidebar extends Component {
                     </form>
 
                     <ul className="sidebar-menu">
-                        <li className="header">MAIN NAVIGATION</li>
                         <li className="treeview">
                             <a href="#">
-                                <i className="fa fa-dashboard"/> <span>Dashboard</span> <i
-                                className="fa fa-angle-left pull-right"/>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../../index.html"><i className="fa fa-circle-o"/> Dashboard v1</a></li>
-                                <li><a href="../../index2.html"><i className="fa fa-circle-o"/> Dashboard v2</a></li>
-                            </ul>
-                        </li>
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-files-o"/>
-                                <span>Layout Options</span>
-                                <span className="label label-primary pull-right">4</span>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../layout/top-nav.html"><i className="fa fa-circle-o"/> Top Navigation</a>
-                                </li>
-                                <li><a href="../layout/boxed.html"><i className="fa fa-circle-o"/> Boxed</a></li>
-                                <li><a href="../layout/fixed.html"><i className="fa fa-circle-o"/> Fixed</a></li>
-                                <li><a href="../layout/collapsed-sidebar.html"><i className="fa fa-circle-o"/> Collapsed
-                                    Sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../widgets.html">
-                                <i className="fa fa-th"/> <span>Widgets</span>
-                                <small className="label pull-right bg-green">Hot</small>
-                            </a>
-                        </li>
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-pie-chart"/>
-                                <span>Charts</span>
-                                <i className="fa fa-angle-left pull-right"/>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../charts/chartjs.html"><i className="fa fa-circle-o"/> ChartJS</a></li>
-                                <li><a href="../charts/morris.html"><i className="fa fa-circle-o"/> Morris</a></li>
-                                <li><a href="../charts/flot.html"><i className="fa fa-circle-o"/> Flot</a></li>
-                                <li><a href="../charts/inline.html"><i className="fa fa-circle-o"/> Inline charts</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-laptop"/>
-                                <span>UI Elements</span>
-                                <i className="fa fa-angle-left pull-right"/>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../UI/general.html"><i className="fa fa-circle-o"/> General</a></li>
-                                <li><a href="../UI/icons.html"><i className="fa fa-circle-o"/> Icons</a></li>
-                                <li><a href="../UI/buttons.html"><i className="fa fa-circle-o"/> Buttons</a></li>
-                                <li><a href="../UI/sliders.html"><i className="fa fa-circle-o"/> Sliders</a></li>
-                                <li><a href="../UI/timeline.html"><i className="fa fa-circle-o"/> Timeline</a></li>
-                                <li><a href="../UI/modals.html"><i className="fa fa-circle-o"/> Modals</a></li>
-                            </ul>
-                        </li>
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-edit"/> <span>Forms</span>
-                                <i className="fa fa-angle-left pull-right"/>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../forms/general.html"><i className="fa fa-circle-o"/> General Elements</a>
-                                </li>
-                                <li><a href="../forms/advanced.html"><i className="fa fa-circle-o"/> Advanced
-                                    Elements</a></li>
-                                <li><a href="../forms/editors.html"><i className="fa fa-circle-o"/> Editors</a></li>
-                            </ul>
-                        </li>
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-table"/> <span>Tables</span>
-                                <i className="fa fa-angle-left pull-right"/>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="../tables/simple.html"><i className="fa fa-circle-o"/> Simple tables</a>
-                                </li>
-                                <li><a href="../tables/data.html"><i className="fa fa-circle-o"/> Data tables</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../calendar.html">
-                                <i className="fa fa-calendar"/> <span>Calendar</span>
-                                <small className="label pull-right bg-red">3</small>
+                                <i className="fa fa-dashboard"/> <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="../mailbox/mailbox.html">
-                                <i className="fa fa-envelope"/> <span>Mailbox</span>
-                                <small className="label pull-right bg-yellow">12</small>
-                            </a>
-                        </li>
-                        <li className="treeview active">
                             <a href="#">
-                                <i className="fa fa-folder"/> <span>Examples</span>
-                                <i className="fa fa-angle-left pull-right"/>
+                                <i className="fa fa-envira"/> <span>Flows</span>
                             </a>
-                            <ul className="treeview-menu">
-                                <li><a href="invoice.html"><i className="fa fa-circle-o"/> Invoice</a></li>
-                                <li><a href="profile.html"><i className="fa fa-circle-o"/> Profile</a></li>
-                                <li><a href="login.html"><i className="fa fa-circle-o"/> Login</a></li>
-                                <li><a href="register.html"><i className="fa fa-circle-o"/> Register</a></li>
-                                <li><a href="lockscreen.html"><i className="fa fa-circle-o"/> Lockscreen</a></li>
-                                <li><a href="404.html"><i className="fa fa-circle-o"/> 404 Error</a></li>
-                                <li><a href="500.html"><i className="fa fa-circle-o"/> 500 Error</a></li>
-                                <li className="active"><a href="blank.html"><i className="fa fa-circle-o"/> Blank
-                                    Page</a></li>
-                                <li><a href="pace.html"><i className="fa fa-circle-o"/> Pace Page</a></li>
-                            </ul>
                         </li>
-                        <li className="treeview">
+                        <li>
                             <a href="#">
-                                <i className="fa fa-share"/> <span>Multilevel</span>
-                                <i className="fa fa-angle-left pull-right"/>
+                                <i className="fa fa-exchange"/> <span>Services</span>
                             </a>
-                            <ul className="treeview-menu">
-                                <li><a href="#"><i className="fa fa-circle-o"/> Level One</a></li>
-                                <li>
-                                    <a href="#"><i className="fa fa-circle-o"/> Level One <i
-                                        className="fa fa-angle-left pull-right"/></a>
-                                    <ul className="treeview-menu">
-                                        <li><a href="#"><i className="fa fa-circle-o"/> Level Two</a></li>
-                                        <li>
-                                            <a href="#"><i className="fa fa-circle-o"/> Level Two <i
-                                                className="fa fa-angle-left pull-right"/></a>
-                                            <ul className="treeview-menu">
-                                                <li><a href="#"><i className="fa fa-circle-o"/> Level Three</a></li>
-                                                <li><a href="#"><i className="fa fa-circle-o"/> Level Three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i className="fa fa-circle-o"/> Level One</a></li>
-                            </ul>
                         </li>
-                        <li><a href="../../documentation/index.html"><i className="fa fa-book"/>
-                            <span>Documentation</span></a></li>
-                        <li className="header">LABELS</li>
-                        <li><a href="#"><i className="fa fa-circle-o text-red"/> <span>Important</span></a></li>
-                        <li><a href="#"><i className="fa fa-circle-o text-yellow"/> <span>Warning</span></a></li>
-                        <li><a href="#"><i className="fa fa-circle-o text-aqua"/> <span>Information</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-ellipsis-v"/> <span>Types</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-dot-circle-o"/> <span>Values</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-th"/> <span>Pages</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-picture-o"/> <span>Assets</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-tree"/> <span>Tenant</span>
+                            </a>
+                        </li>
+
+                        <li className="header">TOOLS</li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-wrench"/> <span>API</span>
+                            </a>
+                        </li>
+                        <li className="active">
+                            <a href="#">
+                                <i className="fa fa-upload"/> <span>Import &amp; Export</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-cog"/> <span>Macros</span>
+                            </a>
+                        </li>
+
+                        <li className="header">CUSTOM</li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-play"/> <span>Players</span>
+                            </a>
+                        </li>
+
+                        <li className="header">HELP</li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-graduation-cap"/> <span>Docs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i className="fa fa-heart-o"/> <span>Support</span>
+                            </a>
+                        </li>
                     </ul>
                 </section>
             </aside>
