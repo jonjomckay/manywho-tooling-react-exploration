@@ -19,16 +19,32 @@ export default class Flow extends Component {
                     </div>
                     <div className="box-footer">
                         <div className="row">
-                            <div className="col-sm-6 border-right">
-                                <div className="description-block">
-                                    <h5 className="description-header" title={ this.state.dateModified }>{ relativeDate(Date.parse(this.state.dateModified)) }</h5>
-                                    <span className="description-text">Last Modified</span>
+                            <div className="col-sm-2 border-right">
+                                <Link to={`/flows/${this.state.id.id}`}>
+                                    <div className="description-block">
+                                        <h5 className="description-header"><i className="fa fa-folder-open"/></h5>
+                                        <span className="description-text">OPEN</span>
+                                    </div>
+                                </Link>
+                            </div>
+                            <div className="col-sm-2 border-right">
+                                <Link to={`/flows/${this.state.id.id}/edit`}>
+                                    <div className="description-block">
+                                        <h5 className="description-header"><i className="fa fa-pencil"/></h5>
+                                        <span className="description-text">EDIT</span>
+                                    </div>
+                                </Link>
+                            </div>
+                            <div className="col-sm-2 border-right">
+                                <div className="description-block text-red">
+                                    <h5 className="description-header"><i className="fa fa-trash"/></h5>
+                                    <span className="description-text">DELETE</span>
                                 </div>
                             </div>
                             <div className="col-sm-6 border-right">
                                 <div className="description-block">
-                                    <h5 className="description-header">13,000</h5>
-                                    <span className="description-text">FOLLOWERS</span>
+                                    <h5 className="description-header" title={ this.state.dateModified }>{ relativeDate(Date.parse(this.state.dateModified)) }</h5>
+                                    <span className="description-text">Last Modified</span>
                                 </div>
                             </div>
                         </div>
