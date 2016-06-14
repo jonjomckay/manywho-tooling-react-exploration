@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 export default class Sidebar extends Component {
     render() {
         return (
@@ -30,9 +32,9 @@ export default class Sidebar extends Component {
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link to="/flows">
                                 <i className="fa fa-envira"/> <span>Flows</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="#">
