@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router';
+import SidebarLink from './SidebarLink';
 
 export default class Sidebar extends Component {
     render() {
@@ -31,11 +31,9 @@ export default class Sidebar extends Component {
                                 <i className="fa fa-dashboard"/> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
-                            <Link to="/flows">
-                                <i className="fa fa-envira"/> <span>Flows</span>
-                            </Link>
-                        </li>
+                        <SidebarLink to="/flows">
+                            <i className="fa fa-envira"/> <span>Flows</span>
+                        </SidebarLink>
                         <li>
                             <a href="#">
                                 <i className="fa fa-exchange"/> <span>Services</span>
@@ -73,7 +71,7 @@ export default class Sidebar extends Component {
                                 <i className="fa fa-wrench"/> <span>API</span>
                             </a>
                         </li>
-                        <li className="active">
+                        <li>
                             <a href="#">
                                 <i className="fa fa-upload"/> <span>Import &amp; Export</span>
                             </a>
