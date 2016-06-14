@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 export default class Flow extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,7 @@ export default class Flow extends Component {
             <div className="col-md-4">
                 <div className="box box-widget widget-user">
                     <div className="widget-user-header bg-black" style={{background: 'url("../dist/img/photo1.png") center center'}}>
-                        <h3 className="widget-user-username">{ this.state.developerName }</h3>
+                        <h3 className="widget-user-username"><Link to={`/flows/${this.state.id.id}`}>{ this.state.developerName }</Link></h3>
                         <h5 className="widget-user-desc"><em>{ this.state.developerSummary || 'No description' }</em></h5>
                     </div>
                     <div className="box-footer">

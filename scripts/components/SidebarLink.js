@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+
+import { Link } from 'react-router';
 
 export default class SidebarLink extends Component {
     static contextTypes = {
@@ -7,7 +8,7 @@ export default class SidebarLink extends Component {
     };
 
     render() {
-        let isActive = this.context.router.isActive(this.props.to, true),
+        let isActive = this.context.router.isActive(this.props.to, false),
             className = isActive ? "active" : "";
 
         return (

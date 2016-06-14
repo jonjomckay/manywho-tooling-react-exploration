@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 
-import Sidebar from './components/Sidebar';
-
 import Dashboard from './components/Dashboard';
-import Header from './components/Header';
 import Flows from './components/Flows';
+import FlowEdit from './components/FlowEdit';
+import FlowGraph from './components/FlowGraph';
 
-import { Router, Route, hashHistory } from 'react-router';
+import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 
 export default class App extends Component {
     render() {
         return (
             <Router history={hashHistory}>
                 <Route path="/" component={Dashboard}>
-                    <Route path="flows" component={ Flows } />
+                    <Route path="flows">
+                        <IndexRoute component={ Flows } />
+                        <Route path=":id">
+                            <IndexRoute component={ FlowGraph } />
+                            <Route path="edit" component={ FlowEdit } />
+                        </Route>
+                    </Route>
                 </Route>
             </Router>
         );
