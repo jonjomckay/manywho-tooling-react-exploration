@@ -8,11 +8,10 @@ export default class SidebarLink extends Component {
     };
 
     render() {
-        let isActive = this.context.router.isActive(this.props.to, false),
-            className = isActive ? "active" : "";
+        let isActive = this.context.router.isActive(this.props.to, false);
 
         return (
-            <li className={className}>
+            <li className={ isActive ? "active" : "" }>
                 <Link {...this.props}>
                     {this.props.children}
                 </Link>
