@@ -3,25 +3,31 @@ import React, { Component } from 'react';
 import FlowsSource from '../sources/FlowsSource';
 
 import Flow from './Flow';
+import LoadingSpinner from './LoadingSpinner';
 
 export default class Flows extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            flows: []
+            flows: [],
+            loading: true
         };
     }
 
     componentWillMount() {
-        console.log(FlowsSource);
-
         FlowsSource.findAll().then(data => {
-            this.setState({ flows: data });
+            this.setState({ flows: data, loading: false });
         });
     }
 
     render() {
+        if (this.state.loading) {
+            return (
+                <LoadingSpinner />
+            );
+        }
+
         var flows = [];
 
         this.state.flows.forEach(function (flow) {
@@ -29,7 +35,7 @@ export default class Flows extends Component {
         });
 
         return (
-            <div className="content-wrapper">
+            <div>
                 <section className="content-header">
                     <h1>Flows</h1>
                 </section>

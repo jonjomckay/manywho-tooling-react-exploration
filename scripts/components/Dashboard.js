@@ -11,7 +11,9 @@ export default class Dashboard extends Component {
 
                 <Sidebar />
 
-                { this.props.children }
+                <div className="content-wrapper">
+                    { this.props.children }
+                </div>
             </div>
         );
     }
