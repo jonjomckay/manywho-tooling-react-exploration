@@ -12,10 +12,10 @@ export default class Flow extends Component {
     render() {
         return (
             <div className="col-md-4">
-                <div className="box box-widget widget-user">
-                    <div className="widget-user-header bg-black" style={{background: 'url("../dist/img/photo1.png") center center'}}>
-                        <h3 className="widget-user-username"><Link to={`/flows/${this.state.id.id}`}>{ this.state.developerName }</Link></h3>
-                        <h5 className="widget-user-desc"><em>{ this.state.developerSummary || 'No description' }</em></h5>
+                <div className="box box-widget widget-flow">
+                    <div className="widget-flow-header bg-black" style={{background: 'url("../dist/img/photo1.png") center center'}}>
+                        <h3 className="widget-flow-name"><Link to={`/flows/${this.state.id.id}`}>{ this.state.developerName }</Link></h3>
+                        <h5 className="widget-flow-desc"><em>{ this.state.developerSummary || 'No description' }</em></h5>
                     </div>
                     <div className="box-footer">
                         <div className="row">
@@ -43,7 +43,9 @@ export default class Flow extends Component {
                             </div>
                             <div className="col-sm-6 border-right">
                                 <div className="description-block">
-                                    <h5 className="description-header" title={ this.state.dateModified }>{ relativeDate(Date.parse(this.state.dateModified)) }</h5>
+                                    <h5 className="description-header" title={ this.state.dateModified }>
+                                        { relativeDate(Date.parse(this.state.dateModified)) }
+                                    </h5>
                                     <span className="description-text">Last Modified</span>
                                 </div>
                             </div>
