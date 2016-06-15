@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import FlowsSource from '../sources/FlowsSource';
+import FlowsSource from '../../sources/FlowsSource';
 
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner';
 
 export default class FlowGraph extends Component {
     constructor(props) {

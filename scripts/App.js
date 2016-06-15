@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import Dashboard from './components/Dashboard';
-import Flows from './components/Flows';
-import FlowEdit from './components/FlowEdit';
-import FlowGraph from './components/FlowGraph';
+import Flows from './components/flow/Flows';
+import FlowEdit from './components/flow/FlowEdit';
+import FlowGraph from './components/flow/FlowGraph';
+import Services from './components/service/Services';
 
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 

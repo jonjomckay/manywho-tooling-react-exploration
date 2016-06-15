@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router';
 
-export default class Flow extends Component {
+export default class FlowTile extends Component {
     constructor(props) {
         super(props);
 
@@ -19,7 +19,7 @@ export default class Flow extends Component {
                     </div>
                     <div className="box-footer">
                         <div className="row">
-                            <div className="col-sm-2 border-right">
+                            <div className="col-xs-2 border-right">
                                 <Link to={`/flows/${this.state.id.id}`}>
                                     <div className="description-block">
                                         <h5 className="description-header"><i className="fa fa-folder-open"/></h5>
@@ -27,7 +27,7 @@ export default class Flow extends Component {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="col-sm-2 border-right">
+                            <div className="col-xs-2 border-right">
                                 <Link to={`/flows/${this.state.id.id}/edit`}>
                                     <div className="description-block">
                                         <h5 className="description-header"><i className="fa fa-pencil"/></h5>
@@ -35,13 +35,13 @@ export default class Flow extends Component {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="col-sm-2 border-right">
+                            <div className="col-xs-2 border-right">
                                 <div className="description-block text-red">
                                     <h5 className="description-header"><i className="fa fa-trash"/></h5>
                                     <span className="description-text">DELETE</span>
                                 </div>
                             </div>
-                            <div className="col-sm-6 border-right">
+                            <div className="col-xs-6 border-right">
                                 <div className="description-block">
                                     <h5 className="description-header" title={ this.state.dateModified }>
                                         { relativeDate(Date.parse(this.state.dateModified)) }
