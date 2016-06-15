@@ -6,7 +6,7 @@ export default class LoadingSpinner extends Component {
     render() {
         return (
             <div className="loading-spinner">
-                <Spinner spinner-name="double-bounce" noFadeIn />
+                <Spinner spinnerName="three-bounce" noFadeIn />
             </div>
         );
     }
