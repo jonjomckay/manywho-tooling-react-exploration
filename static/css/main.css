@@ -5,6 +5,13 @@
     height: 100%;
 }
 
+.loading-spinner-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 34px;
+}
+
 .widget-flow .widget-flow-header {
     padding: 20px;
     height: 120px;
