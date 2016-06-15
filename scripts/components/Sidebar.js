@@ -34,11 +34,9 @@ export default class Sidebar extends Component {
                         <SidebarLink to="/flows">
                             <i className="fa fa-envira"/> <span>Flows</span>
                         </SidebarLink>
-                        <li>
-                            <a href="#">
-                                <i className="fa fa-exchange"/> <span>Services</span>
-                            </a>
-                        </li>
+                        <SidebarLink to="/services">
+                            <i className="fa fa-exchange"/> <span>Services</span>
+                        </SidebarLink>
                         <li>
                             <a href="#">
                                 <i className="fa fa-ellipsis-v"/> <span>Types</span>

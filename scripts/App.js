@@ -20,6 +20,9 @@ export default class App extends Component {
                             <Route path="edit" component={ FlowEdit } />
                         </Route>
                     </Route>
+                    <Route path="services">
+                        <IndexRoute component={ Services } />
+                    </Route>
                 </Route>
             </Router>
         );
