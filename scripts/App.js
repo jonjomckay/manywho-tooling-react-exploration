@@ -7,6 +7,7 @@ import FlowGraph from './components/flow/FlowGraph';
 import Login from './components/Login';
 import LoginStore from './stores/LoginStore';
 import Services from './components/service/Services';
+import Wrapper from './components/Wrapper';
 
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 
@@ -38,7 +39,9 @@ export default class App extends Component {
 
         return (
             <Router history={hashHistory}>
-                <Route path="/" component={Dashboard}>
+                <Route path="/" component={ Wrapper }>
+                    <IndexRoute component={ Dashboard } />
+
                     <Route path="flows">
                         <IndexRoute component={ Flows } />
                         <Route path=":id">
