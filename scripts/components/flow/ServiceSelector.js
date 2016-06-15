@@ -52,7 +52,7 @@ export default class ServiceSelector extends Component {
 
         return (
             <div>
-                <div className="col-sm-3">
+                <div className="col-sm-3 col-xs-12">
                     <div className="input-group">
                         <select className="form-control" value={ this.props.selected } onChange={ this.props.onChange.bind(this) }>
                             { services }
@@ -61,7 +61,7 @@ export default class ServiceSelector extends Component {
                         <a className="input-group-addon" onClick={ this.refresh.bind(this) }><i className="fa fa-refresh" /></a>
                     </div>
                 </div>
-                <div className="col-sm-1">
+                <div className="col-sm-1 hidden-xs">
                     { spinner }
                 </div>
             </div>

@@ -171,7 +171,6 @@ export default class FlowEdit extends Component {
                                         <div className="form-group">
                                             <label htmlFor="flow-authorization-service" className="col-sm-1 control-label">Service</label>
 
-
                                             <ServiceSelector
                                                 selected={ this.state.flow.authorization.serviceElementId }
                                                 onChange={ this.handleAuthenticationServiceChange.bind(this) } />
@@ -180,11 +179,9 @@ export default class FlowEdit extends Component {
                                         <div className="form-group">
                                             <label htmlFor="flow-authorization-type" className="col-sm-1 control-label">Type</label>
 
-                                            <div className="col-sm-2">
-                                                <AuthenticationTypeSelector
-                                                    type={ this.state.flow.authorization.globalAuthenticationType }
-                                                    onChange={ this.handleAuthenticationTypeChange.bind(this) } />
-                                            </div>
+                                            <AuthenticationTypeSelector
+                                                type={ this.state.flow.authorization.globalAuthenticationType }
+                                                onChange={ this.handleAuthenticationTypeChange.bind(this) } />
                                         </div>
                                     </div>
                                     <div className="box-footer">

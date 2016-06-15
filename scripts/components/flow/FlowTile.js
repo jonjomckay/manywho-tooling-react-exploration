@@ -19,7 +19,7 @@ export default class FlowTile extends Component {
                     </div>
                     <div className="box-footer">
                         <div className="row">
-                            <div className="col-xs-2 border-right">
+                            <div className="col-md-2 col-xs-3 border-right">
                                 <Link to={`/flows/${this.state.id.id}`}>
                                     <div className="description-block">
                                         <h5 className="description-header"><i className="fa fa-folder-open"/></h5>
@@ -27,7 +27,7 @@ export default class FlowTile extends Component {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="col-xs-2 border-right">
+                            <div className="col-md-2 col-xs-3 border-right">
                                 <Link to={`/flows/${this.state.id.id}/edit`}>
                                     <div className="description-block">
                                         <h5 className="description-header"><i className="fa fa-pencil"/></h5>
@@ -35,7 +35,7 @@ export default class FlowTile extends Component {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="col-xs-2 border-right">
+                            <div className="col-md-2 hidden-xs border-right">
                                 <div className="description-block text-red">
                                     <h5 className="description-header"><i className="fa fa-trash"/></h5>
                                     <span className="description-text">DELETE</span>

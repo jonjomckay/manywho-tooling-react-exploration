@@ -33,8 +33,8 @@ export default class Services extends Component {
             services.push(
                 <tr key={ service.id }>
                     <td>{ service.developerName }</td>
-                    <td>{ service.developerSummary || <em>No description</em> }</td>
-                    <td>{ service.uri }</td>
+                    <td className="hidden-xs">{ service.developerSummary || <em>No description</em> }</td>
+                    <td className="hidden-xs">{ service.uri }</td>
                     <td title={ service.dateModified }>{ relativeDate(Date.parse(service.dateModified)) }</td>
                 </tr>
             );
@@ -55,8 +55,8 @@ export default class Services extends Component {
                                         <tbody>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Summary</th>
-                                                <th>URI</th>
+                                                <th className="hidden-xs">Summary</th>
+                                                <th className="hidden-xs">URI</th>
                                                 <th>Last Updated</th>
                                             </tr>
 

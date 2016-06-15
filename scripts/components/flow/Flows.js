@@ -41,7 +41,7 @@ export default class Flows extends Component {
             flows.push(
                 <tr key={ flow.id.id }>
                     <td>{ flow.developerName }</td>
-                    <td>{ flow.developerSummary || <em>No description</em> }</td>
+                    <td className="hidden-xs">{ flow.developerSummary || <em>No description</em> }</td>
                     <td title={ flow.dateModified }>{ relativeDate(Date.parse(flow.dateModified)) }</td>
                 </tr>
             );
@@ -66,7 +66,7 @@ export default class Flows extends Component {
                                         <tbody>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Summary</th>
+                                                <th className="hidden-xs">Summary</th>
                                                 <th>Last Updated</th>
                                             </tr>
 
