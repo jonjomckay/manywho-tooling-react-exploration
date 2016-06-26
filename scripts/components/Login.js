@@ -10,7 +10,12 @@ export default class Login extends Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            notification: {
+                type: '',
+                title: '',
+                message: ''
+            }
         }
     }
 
@@ -28,13 +33,44 @@ export default class Login extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
+        this.setState(update(this.state, {
+            notification: {
+                $set: {
+                    type: 'info',
+                    title: 'Hold on...',
+                    message: 'Logging you in'
+                }
+            }
+        }));
         
         LoginSource.login(this.state.username, this.state.password).then(token => {
             this.props.success(token);
+        }).catch(error => {
+            this.setState(update(this.state, {
+                notification: {
+                    $set: {
+                        type: 'danger',
+                        title: 'Oops!',
+                        message: error
+                    }
+                }
+            }));
         });
     }
 
     render() {
+        var notification = <span />;
+        if (this.state.notification.type) {
+            notification = (
+                <div className={`callout callout-${ this.state.notification.type }`}>
+                    <h4>{ this.state.notification.title }</h4>
+
+                    <p>{ this.state.notification.message }</p>
+                </div>
+            );
+        }
+
         return (
             <div className="hold-transition login-page">
                 <div className="login-box">
@@ -42,6 +78,9 @@ export default class Login extends Component {
                         <span><b>Many</b>Who</span>
                     </div>
                     <div className="login-box-body">
+
+                        { notification }
+
                         <form onSubmit={ this.handleSubmit.bind(this) }>
                             <div className="form-group has-feedback">
                                 <input type="text" className="form-control" placeholder="Username" onChange={ this.handleUsernameChange.bind(this) } />
