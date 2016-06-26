@@ -1,28 +1,20 @@
-# React ES6 Webpack Boilerplate
+ManyWho Tooling React Exploration
+=================================
 
-Boilerplate for kick starting a project with the following technologies:
-* [React](https://github.com/facebook/react)
-* [Babel 6](http://babeljs.io)
-* [Webpack](http://webpack.github.io) for bundling
-* [Webpack Dev Server](http://webpack.github.io/docs/webpack-dev-server.html)
-* [React Transform](https://github.com/gaearon/react-transform-hmr) for hot reloading React components in real time.
+This is just a little project for me to learn both React and modern JavaScript practices, using an API that I know
+inside and out - the ManyWho Draw API.
 
-The various webpack options used have been explained in detailed as comments in the config file. Should help with understanding the nitty-gritty :)
+It's probably atrocious quality and doesn't work in a lot of places, but it's all part of the journey!
 
-
-### Usage
+## Usage
 
 ```
-npm install
-npm start
-Open http://localhost:5000
+$ npm install
+$ npm start
 ```
 
-### Linting
+Then open `http://localhost:5000` and you should have a dashboard.
 
-ESLint with React linting options have been enabled.
+## License
 
-```
-npm run lint
-```
-
+This is released under the [MIT License](LICENSE).
