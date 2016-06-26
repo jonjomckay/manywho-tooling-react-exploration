@@ -58,7 +58,7 @@ export default class Header extends Component {
                                         <img src={ gravatar.url(this.props.user.email, { size: 160, default: 'identicon' })} className="img-circle" alt={ this.getUserFullName() } />
                                         <p>
                                             <span>{ this.getUserFullName() }</span>
-                                            <small>Member since Nov. 2012</small>
+                                            <small>{ this.props.user.username }</small>
                                         </p>
                                     </li>
                                     {/* Menu Body */}
