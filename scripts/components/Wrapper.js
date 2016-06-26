@@ -43,9 +43,9 @@ export default class Wrapper extends Component {
     render() {
         return (
             <div className="wrapper">
-                <Header />
+                <Header user={ this.props.route.user } />
 
-                <Sidebar />
+                <Sidebar user={ this.props.route.user } />
 
                 <div className="content-wrapper">
                     { this.props.children }

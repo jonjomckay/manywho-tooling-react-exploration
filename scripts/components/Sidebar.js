@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import gravatar from 'gravatar';
 
 import SidebarLink from './SidebarLink';
 
 export default class Sidebar extends Component {
+    getUserFullName() {
+        return this.props.user.firstName + ' ' + this.props.user.lastName;
+    }
+
     render() {
         return (
             <aside className="main-sidebar">
                 <section className="sidebar">
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="https://www.gravatar.com/avatar/145d7b2ea0dd15d76ed257dc0fb1bfd8?s=96&d=identicon" className="img-circle" alt="Jonjo McKay"/>
+                            <img src={ gravatar.url(this.props.user.email, { size: 96, default: 'identicon' })} className="img-circle" alt={ this.getUserFullName() } />
                         </div>
                         <div className="pull-left info">
-                            <p>Jonjo McKay</p>
+                            <p>{ this.getUserFullName() }</p>
                             <a href="#"><i className="fa fa-circle text-success"/> Online</a>
                         </div>
                     </div>

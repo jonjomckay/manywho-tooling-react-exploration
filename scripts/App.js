@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import queryString from 'query-string';
 
 import Dashboard from './components/Dashboard';
+import DirectorySource from './sources/DirectorySource';
 import Flows from './components/flow/Flows';
 import FlowEdit from './components/flow/FlowEdit';
 import FlowGraph from './components/flow/FlowGraph';
@@ -18,15 +20,26 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            authenticated: false
+            authenticated: false,
+            user: {
+                firstName: '',
+                lastName: '',
+                email: ''
+            }
         };
     }
 
     handleLogin(token) {
         LoginStore.storeToken(token);
 
-        this.setState({
-            authenticated: true
+        var tokenParameters = queryString.parse(decodeURIComponent(token));
+
+        // Fetch the logged in user. TODO: This definitely won't work if the token structure is changed
+        DirectorySource.findUser(tokenParameters.ManyWhoUserId, tokenParameters.Username).then(data => {
+            this.setState({
+                authenticated: true,
+                user: data
+            });
         });
     }
 
@@ -41,7 +54,7 @@ export default class App extends Component {
 
         return (
             <Router history={browserHistory}>
-                <Route path="/" component={ Wrapper }>
+                <Route path="/" user={ this.state.user } component={ Wrapper }>
                     <IndexRoute component={ Dashboard } />
 
                     <Route path="flows">
