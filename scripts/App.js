@@ -9,7 +9,7 @@ import LoginStore from './stores/LoginStore';
 import Services from './components/service/Services';
 import Wrapper from './components/Wrapper';
 
-import { IndexRoute, Router, Route, hashHistory } from 'react-router';
+import { IndexRoute, Router, Route, browserHistory } from 'react-router';
 
 export default class App extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ export default class App extends Component {
         document.body.className = 'hold-transition skin-black fixed sidebar-mini';
 
         return (
-            <Router history={hashHistory}>
+            <Router history={browserHistory}>
                 <Route path="/" component={ Wrapper }>
                     <IndexRoute component={ Dashboard } />
 
