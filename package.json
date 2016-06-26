@@ -28,11 +28,13 @@
     "babel-runtime": "^6.3.19",
     "chart.js": "^1.1.1",
     "component-emitter": "^1.2.1",
+    "gojs": "^1.6.10",
     "immutability-helper": "^2.0.0",
     "react": "^0.14.5",
     "react-chartjs": "^0.7.3",
     "react-dom": "^0.14.5",
     "react-ellipsis-text": "^0.2.0",
+    "react-quill": "git+https://github.com/wifast/react-quill.git",
     "react-router": "^2.4.1",
     "react-spinkit": "^1.1.7",
     "relative-date": "^1.1.3"

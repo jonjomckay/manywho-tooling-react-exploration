@@ -65,3 +65,17 @@
 .control-sidebar .bottom-actions .btn {
     margin-right: 10px;
 }
+
+.quill {
+    background: #fff;
+    color: #000;
+    border: 1px #ccc solid;
+}
+
+.ql-container.ql-snow {
+    border: 0;
+}
+
+.ql-toolbar.ql-snow {
+    border: 0;
+}
