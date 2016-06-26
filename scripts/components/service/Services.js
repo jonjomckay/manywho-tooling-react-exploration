@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EllipsisText  from 'react-ellipsis-text';
 
 import ServicesSource from "../../sources/ServicesSource";
 
@@ -33,7 +34,11 @@ export default class Services extends Component {
             services.push(
                 <tr key={ service.id }>
                     <td>{ service.developerName }</td>
-                    <td className="hidden-xs">{ service.developerSummary || <em>No description</em> }</td>
+                    <td className="hidden-xs">
+                        <em>
+                            <EllipsisText text={ service.developerSummary || 'No description' } length={ 100 } />
+                        </em>
+                    </td>
                     <td className="hidden-xs">{ service.uri }</td>
                     <td title={ service.dateModified }>{ relativeDate(Date.parse(service.dateModified)) }</td>
                 </tr>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import EllipsisText  from 'react-ellipsis-text';
+import { Link } from 'react-router';
 
 import FlowsSource from '../../sources/FlowsSource';
 
@@ -40,9 +42,24 @@ export default class Flows extends Component {
         this.state.flows.sort(Sort.byDeveloperName).forEach(function (flow) {
             flows.push(
                 <tr key={ flow.id.id }>
-                    <td>{ flow.developerName }</td>
-                    <td className="hidden-xs">{ flow.developerSummary || <em>No description</em> }</td>
+                    <td><EllipsisText text={ flow.developerName } length={ 60 } /></td>
+                    <td className="hidden-xs">
+                        <em>
+                            <EllipsisText text={ flow.developerSummary || 'No description' } length={100} />
+                        </em>
+                    </td>
                     <td title={ flow.dateModified }>{ relativeDate(Date.parse(flow.dateModified)) }</td>
+                    <td>
+                        <span className="label label-multiple-inline label-primary">
+                            <Link to={`/flows/${flow.id.id}`}><i className="fa fa-folder-open"/> Open</Link>
+                        </span>
+
+                        <span className="label label-multiple-inline label-info">
+                            <Link to={`/flows/${flow.id.id}/edit`}><i className="fa fa-pencil"/> Edit</Link>
+                        </span>
+
+                        <span className="label label-multiple-inline label-danger"><i className="fa fa-trash"/> Delete</span>
+                    </td>
                 </tr>
             );
         });
@@ -68,6 +85,7 @@ export default class Flows extends Component {
                                                 <th>Name</th>
                                                 <th className="hidden-xs">Summary</th>
                                                 <th>Last Updated</th>
+                                                <th>Actions</th>
                                             </tr>
 
                                             { flows }
