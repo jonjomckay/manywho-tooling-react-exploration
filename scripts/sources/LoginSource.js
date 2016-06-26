@@ -16,7 +16,7 @@ export default class LoginSource {
                 return response.json();
             }
 
-            return '';
+            throw response.statusText;
         });
     }
 }
