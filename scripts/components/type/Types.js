@@ -44,7 +44,7 @@ export default class Types extends Component {
             return service.developerName;
         }
 
-        return 'Unknown';
+        return <em>No service</em>;
     }
 
     render() {
