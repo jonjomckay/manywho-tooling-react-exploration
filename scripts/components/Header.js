@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
+import EventHandler from "../EventHandler";
+
 export default class Header extends Component {
+    toggleControlSidebar() {
+        EventHandler.emit('control.toggle');
+    }
+
     render() {
         return (
             <header className="main-header">
@@ -35,6 +41,9 @@ export default class Header extends Component {
                                     </li>
                                     <li className="footer"><a href="#">View all</a></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="#" onClick={ this.toggleControlSidebar.bind(this) }><i className="fa fa-gears"></i></a>
                             </li>
                         </ul>
                     </div>

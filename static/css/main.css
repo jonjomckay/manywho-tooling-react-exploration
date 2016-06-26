@@ -39,3 +39,29 @@
     height: auto;
     border: 3px solid #fff;
 }
+
+.label a {
+    color: inherit;
+}
+
+.label-multiple-inline {
+    margin-right: 5px;
+}
+
+.control-sidebar-bg, .control-sidebar {
+    right: -37%;
+    width: 37%;
+}
+
+.control-sidebar .bottom-actions {
+    background: #181f23;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    padding: 15px 25px;
+}
+
+.control-sidebar .bottom-actions .btn {
+    margin-right: 10px;
+}
