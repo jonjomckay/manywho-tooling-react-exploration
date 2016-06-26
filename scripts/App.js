@@ -7,6 +7,8 @@ import FlowGraph from './components/flow/FlowGraph';
 import Login from './components/Login';
 import LoginStore from './stores/LoginStore';
 import Services from './components/service/Services';
+import Type from './components/type/Type';
+import Types from './components/type/Types';
 import Wrapper from './components/Wrapper';
 
 import { IndexRoute, Router, Route, browserHistory } from 'react-router';
@@ -51,6 +53,11 @@ export default class App extends Component {
                     </Route>
                     <Route path="services">
                         <IndexRoute component={ Services } />
+                    </Route>
+                    <Route path="types">
+                        <IndexRoute component={ Types } />
+
+                        <Route path=":id" component={ Type } />
                     </Route>
                 </Route>
             </Router>

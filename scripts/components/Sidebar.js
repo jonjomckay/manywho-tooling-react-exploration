@@ -37,11 +37,9 @@ export default class Sidebar extends Component {
                         <SidebarLink to="/services">
                             <i className="fa fa-exchange"/> <span>Services</span>
                         </SidebarLink>
-                        <li>
-                            <a href="#">
-                                <i className="fa fa-ellipsis-v"/> <span>Types</span>
-                            </a>
-                        </li>
+                        <SidebarLink to="/types">
+                            <i className="fa fa-ellipsis-v"/> <span>Types</span>
+                        </SidebarLink>
                         <li>
                             <a href="#">
                                 <i className="fa fa-dot-circle-o"/> <span>Values</span>
