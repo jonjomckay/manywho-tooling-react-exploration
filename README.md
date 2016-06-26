@@ -17,4 +17,5 @@ Then open `http://localhost:5000` and you should have a dashboard.
 
 ## License
 
-This is released under the [MIT License](LICENSE).
+This is released under the [MIT License](LICENSE) and uses the awesome [AdminLTE](https://github.com/almasaeed2010/AdminLTE)
+dashboard, which is also released under the MIT license.
