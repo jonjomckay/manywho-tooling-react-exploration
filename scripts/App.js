@@ -55,8 +55,8 @@ export default class App extends Component {
 
         return (
             <Router history={browserHistory}>
-                <Route path="/" user={ this.state.user } component={ Wrapper }>
-                    <IndexRoute component={ Dashboard } />
+                <Route user={ this.state.user } component={ Wrapper }>
+                    <IndexRoute path="/" component={ Dashboard } />
 
                     <Route path="flows">
                         <IndexRoute component={ Flows } />

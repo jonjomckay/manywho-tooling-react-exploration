@@ -31,11 +31,9 @@ export default class Sidebar extends Component {
                     </form>
 
                     <ul className="sidebar-menu">
-                        <li className="treeview">
-                            <a href="#">
-                                <i className="fa fa-dashboard"/> <span>Dashboard</span>
-                            </a>
-                        </li>
+                        <SidebarLink to="/">
+                            <i className="fa fa-dashboard"/> <span>Dashboard</span>
+                        </SidebarLink>
                         <SidebarLink to="/flows">
                             <i className="fa fa-envira"/> <span>Flows</span>
                         </SidebarLink>
