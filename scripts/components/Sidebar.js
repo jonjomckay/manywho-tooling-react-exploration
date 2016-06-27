@@ -60,11 +60,9 @@ export default class Sidebar extends Component {
                                 <i className="fa fa-picture-o"/> <span>Assets</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i className="fa fa-tree"/> <span>Tenant</span>
-                            </a>
-                        </li>
+                        <SidebarLink to="/tenant">
+                            <i className="fa fa-tree"/> <span>Tenant</span>
+                        </SidebarLink>
 
                         <li className="header">TOOLS</li>
                         <li>

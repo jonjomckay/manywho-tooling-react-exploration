@@ -9,6 +9,7 @@ import FlowGraph from './components/flow/FlowGraph';
 import Login from './components/Login';
 import LoginStore from './stores/LoginStore';
 import Services from './components/service/Services';
+import Tenant from './components/tenant/Tenant';
 import Type from './components/type/Type';
 import Types from './components/type/Types';
 import Wrapper from './components/Wrapper';
@@ -66,6 +67,9 @@ export default class App extends Component {
                     </Route>
                     <Route path="services">
                         <IndexRoute component={ Services } />
+                    </Route>
+                    <Route path="tenant">
+                        <IndexRoute component={ Tenant } />
                     </Route>
                     <Route path="types">
                         <IndexRoute component={ Types } />
