@@ -12,7 +12,7 @@ export default class Tenant extends Component {
             tenant: {
                 id: '',
                 developerName: '',
-                developerSummary: 'This tenant is the one created by Jonjo before he joined ManyWho, woo.',
+                developerSummary: '',
                 securitySettings: {
                     authorizedAdminIPRanges: [],
                     authorizedDrawIPRanges: [],
@@ -23,7 +23,7 @@ export default class Tenant extends Component {
                     isPackagingRestrictedByIPRange: false,
                     isRunRestrictedByIPRange: false,
                     userRegistrationSettings: {
-
+                        type: ''
                     }
                 },
                 stateSettings: {
