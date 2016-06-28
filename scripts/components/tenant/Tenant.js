@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import AdminSource from '../../sources/AdminSource';
 import LoadingSpinner from '../LoadingSpinner';
+import TenantRegistrationSettings from './TenantRegistrationSettings';
+import TenantReportingSettings from './TenantReportingSettings';
 
 export default class Tenant extends Component {
     constructor(props) {
@@ -13,6 +15,7 @@ export default class Tenant extends Component {
                 id: '',
                 developerName: '',
                 developerSummary: '',
+                subdomain: '',
                 securitySettings: {
                     authorizedAdminIPRanges: [],
                     authorizedDrawIPRanges: [],
@@ -128,8 +131,12 @@ export default class Tenant extends Component {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="box box-primary">
-                                <div className="box-body box-profile">
-                                    <h3 className="profile-username">{ this.state.tenant.developerName }</h3>
+                                <div className="box-header with-border">
+                                    <span><h3 className="box-title">Overview</h3></span>
+                                    <span><a className="pull-right"><i className="fa fa-edit" /> Edit</a></span>
+                                </div>
+                                <div className="box-body box-overview">
+                                    <h4>{ this.state.tenant.developerName }</h4>
                                     <p className="text-muted">{ this.state.tenant.id }</p>
                                     <em className="text-muted">{ this.state.tenant.developerSummary }</em>
                                 </div>
@@ -137,24 +144,37 @@ export default class Tenant extends Component {
 
                             <div className="box box-primary">
                                 <div className="box-header with-border">
-                                    <span><h3 className="box-title">Settings</h3></span>
-                                    <span><a className="pull-right"><i className="fa fa-edit" /> Edit</a></span>
+                                    <h3 className="box-title">Settings</h3>
                                 </div>
 
                                 <div className="box-body">
-                                    <h4><i className="fa fa-shield margin-r-5" /> Security</h4>
+                                    <div className="box-header">
+                                        <span><h4 className="box-title"><i className="fa fa-shield margin-r-5" /> Security</h4></span>
+                                        <span><a className="pull-right"><i className="fa fa-edit" /> Edit</a></span>
+                                    </div>
+
                                     <ul className="text-muted">
                                         <li>{ flowRestrictions }</li>
                                         <li>{ toolingRestrictions }</li>
                                         <li>{ administrationRestrictions }</li>
                                         <li>{ packagingRestrictions }</li>
                                     </ul>
-                                    <hr />
-                                    <h4><i className="fa fa-user-plus margin-r-5" /> Registration</h4>
-                                    <p className="text-muted">{ registration }</p>
+
                                     <hr />
 
-                                    <h4><i className="fa fa-bar-chart margin-r-5" /> Reporting</h4>
+                                    <div className="box-header">
+                                        <span><h4 className="box-title"><i className="fa fa-user-plus margin-r-5" /> Registration</h4></span>
+                                        <span><a className="pull-right"><i className="fa fa-edit" /> Edit</a></span>
+                                    </div>
+
+                                    <p className="text-muted">{ registration }</p>
+
+                                    <hr />
+
+                                    <div className="box-header">
+                                        <span><h4 className="box-title"><i className="fa fa-bar-chart margin-r-5" /> Reporting</h4></span>
+                                        <span><a className="pull-right"><i className="fa fa-edit" /> Edit</a></span>
+                                    </div>
 
                                     <p className="text-muted">{ reportingEndpoint }</p>
 
@@ -171,6 +191,103 @@ export default class Tenant extends Component {
                             </div>
                             {/* /.box */}
                         </div>
+
+                        <div className="example-modal">
+                            <div className="modal">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span></button>
+                                            <h4 className="modal-title">Edit Tenant</h4>
+                                        </div>
+                                        <div className="modal-body">
+                                            <form className="form-horizontal">
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-name" className="col-sm-2 control-label">Name</label>
+                                                    <div className="col-sm-6">
+                                                        <input type="text" className="form-control" id="tenant-name" placeholder="Name" disabled value={ this.state.tenant.developerName } />
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-subdomain" className="col-sm-2 control-label">Subdomain</label>
+                                                    <div className="col-sm-6">
+                                                        <div className="input-group">
+                                                            <input type="text" className="form-control" id="tenant-subdomain" placeholder="subdomain" value={ this.state.tenant.subdomain } />
+
+                                                            <span className="input-group-addon">.manywho.com</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-summary" className="col-sm-2 control-label">Summary</label>
+                                                    <div className="col-sm-10">
+                                                        <textarea className="form-control" id="tenant-summary" placeholder="Summary" value={ this.state.tenant.developerSummary } />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="example-modal">
+                            <div className="modal">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span></button>
+                                            <h4 className="modal-title">Edit Tenant Security</h4>
+                                        </div>
+                                        <div className="modal-body">
+                                            <form className="form-horizontal">
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-name" className="col-sm-2 control-label">Name</label>
+                                                    <div className="col-sm-6">
+                                                        <input type="text" className="form-control" id="tenant-name" placeholder="Name" disabled value={ this.state.tenant.developerName } />
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-subdomain" className="col-sm-2 control-label">Subdomain</label>
+                                                    <div className="col-sm-6">
+                                                        <div className="input-group">
+                                                            <input type="text" className="form-control" id="tenant-subdomain" placeholder="subdomain" value={ this.state.tenant.subdomain } />
+
+                                                            <span className="input-group-addon">.manywho.com</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="tenant-summary" className="col-sm-2 control-label">Summary</label>
+                                                    <div className="col-sm-10">
+                                                        <textarea className="form-control" id="tenant-summary" placeholder="Summary" value={ this.state.tenant.developerSummary } />
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <TenantRegistrationSettings settings={ this.state.tenant.securitySettings.userRegistrationSettings } />
+
+                        <TenantReportingSettings />
+
                         {/* /.col */}
                         <div className="col-md-9">
                             <div className="box box-primary">
