@@ -31,7 +31,7 @@ export default class Sidebar extends Component {
                     </form>
 
                     <ul className="sidebar-menu">
-                        <SidebarLink to="/">
+                        <SidebarLink to="/dashboard">
                             <i className="fa fa-dashboard"/> <span>Dashboard</span>
                         </SidebarLink>
                         <SidebarLink to="/flows">

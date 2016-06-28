@@ -14,7 +14,7 @@ import Type from './components/type/Type';
 import Types from './components/type/Types';
 import Wrapper from './components/Wrapper';
 
-import { IndexRoute, Router, Route, browserHistory } from 'react-router';
+import { IndexRoute, Redirect, Router, Route, browserHistory } from 'react-router';
 
 export default class App extends Component {
     constructor(props) {
@@ -55,8 +55,9 @@ export default class App extends Component {
 
         return (
             <Router history={browserHistory}>
-                <Route user={ this.state.user } component={ Wrapper }>
-                    <IndexRoute path="/" component={ Dashboard } />
+                <Route path="/" user={ this.state.user } component={ Wrapper }>
+                    <IndexRoute component={ Dashboard } />
+                    <Route path="dashboard" component={ Dashboard } />
 
                     <Route path="flows">
                         <IndexRoute component={ Flows } />
