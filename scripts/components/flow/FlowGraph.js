@@ -30,6 +30,13 @@ export default class FlowGraph extends Component {
     createGraph() {
         let diagram = $(go.Diagram, this.refs.graph, { initialContentAlignment: go.Spot.Center });
 
+        diagram.addDiagramListener('PartCreated', (event) => {
+            console.log(event);
+        });
+
+        diagram.toolManager.clickCreatingTool.archetypeNodeData = {
+            key: "Noooode", text: "yo mamma", color: 'green'
+        };
         diagram.toolManager.draggingTool.isGridSnapEnabled = true;
 
         diagram.nodeTemplate =

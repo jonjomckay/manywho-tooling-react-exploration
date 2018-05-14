@@ -58,9 +58,18 @@ export default class Sidebar extends Component {
                                 <i className="fa fa-picture-o"/> <span>Assets</span>
                             </a>
                         </li>
-                        <SidebarLink to="/tenant">
-                            <i className="fa fa-tree"/> <span>Tenant</span>
-                        </SidebarLink>
+                        <li>
+                            <a href="">
+                                <i className="fa fa-tree"/> <span>Tenant</span>
+                                <i className="fa fa-angle-left pull-right"></i>
+                            </a>
+
+                            <ul className="treeview-menu">
+                                <SidebarLink to="/tenant"><i className="fa fa-circle-o"></i> General Elements</SidebarLink>
+                                <li><a href="forms/advanced.html"><i className="fa fa-circle-o"></i> Advanced Elements</a></li>
+                                <li><a href="forms/editors.html"><i className="fa fa-circle-o"></i> Editors</a></li>
+                            </ul>
+                        </li>
 
                         <li className="header">TOOLS</li>
                         <li>

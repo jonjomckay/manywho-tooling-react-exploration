@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import update from 'immutability-helper';
 
 import LoginSource from '../sources/LoginSource';
+import LoginStore from '../stores/LoginStore';
 
 export default class Login extends Component {
     constructor(props) {
@@ -11,11 +12,33 @@ export default class Login extends Component {
         this.state = {
             username: '',
             password: '',
+            remembered: false,
             notification: {
                 type: '',
                 title: '',
                 message: ''
             }
+        }
+    }
+
+    componentWillMount() {
+        var token = LoginStore.getToken();
+
+        if (token) {
+            this.setState(update(this.state, {
+                remembered: {
+                    $set: true
+                },
+                notification: {
+                    $set: {
+                        type: 'info',
+                        title: 'Hold on...',
+                        message: 'Logging you in'
+                    }
+                }
+            }));
+
+            this.props.success(token);
         }
     }
 
@@ -71,6 +94,31 @@ export default class Login extends Component {
             );
         }
 
+        var inputs = <span />;
+        if (this.state.remembered === false) {
+            inputs = (
+                <div>
+                    <form onSubmit={ this.handleSubmit.bind(this) }>
+                        <div className="form-group has-feedback">
+                            <input type="text" className="form-control" placeholder="Username" onChange={ this.handleUsernameChange.bind(this) } />
+                            <span className="glyphicon glyphicon-envelope form-control-feedback"/>
+                        </div>
+                        <div className="form-group has-feedback">
+                            <input type="password" className="form-control" placeholder="Password" onChange={ this.handlePasswordChange.bind(this) } />
+                            <span className="glyphicon glyphicon-lock form-control-feedback"/>
+                        </div>
+                        <div className="row">
+                            <div className="col-xs-12">
+                                <button type="submit" className="btn btn-primary btn-block btn-flat">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="#">I forgot my password</a><br />
+                    <a href="register.html" className="text-center">Register a new membership</a>
+                </div>
+            );
+        }
+
         return (
             <div className="hold-transition login-page">
                 <div className="login-box">
@@ -81,27 +129,10 @@ export default class Login extends Component {
 
                         { notification }
 
-                        <form onSubmit={ this.handleSubmit.bind(this) }>
-                            <div className="form-group has-feedback">
-                                <input type="text" className="form-control" placeholder="Username" onChange={ this.handleUsernameChange.bind(this) } />
-                                <span className="glyphicon glyphicon-envelope form-control-feedback"/>
-                            </div>
-                            <div className="form-group has-feedback">
-                                <input type="password" className="form-control" placeholder="Password" onChange={ this.handlePasswordChange.bind(this) } />
-                                <span className="glyphicon glyphicon-lock form-control-feedback"/>
-                            </div>
-                            <div className="row">
-                                <div className="col-xs-12">
-                                    <button type="submit" className="btn btn-primary btn-block btn-flat">Login</button>
-                                </div>
-                            </div>
-                        </form>
-                        <a href="#">I forgot my password</a><br />
-                        <a href="register.html" className="text-center">Register a new membership</a>
+                        { inputs }
+
                     </div>
-                    {/* /.login-box-body */}
                 </div>
-                {/* /.login-box */}
             </div>
         );
     }
